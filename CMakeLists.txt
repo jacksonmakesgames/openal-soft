@@ -1164,7 +1164,7 @@ SET(IMPL_TARGET OpenAL) # Either OpenAL or soft_oal.
 
 # Build main library
 IF(LIBTYPE STREQUAL "STATIC")
-    add_library(${IMPL_TARGET} STATIC ${COMMON_OBJS} ${OPENAL_OBJS} ${ALC_OBJS})
+    add_library(${IMPL_TARGET} OBJECT ${COMMON_OBJS} ${OPENAL_OBJS} ${ALC_OBJS})
     target_compile_definitions(${IMPL_TARGET} PUBLIC AL_LIBTYPE_STATIC)
     target_link_libraries(${IMPL_TARGET} PRIVATE ${LINKER_FLAGS} ${EXTRA_LIBS} ${MATH_LIB})
     if(WIN32)
